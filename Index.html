@@ -1,0 +1,2254 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nói Không Với Bạo Lực Học Đường</title>
+  <link rel="icon" type="image/png" href="https://ntricao.github.io/SaftNet-Kids/Logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --teal-dark: #0a4a3c;
+      --teal-mid: #1a7a62;
+      --teal-light: #2fb08a;
+      --teal-pale: #d0f0e6;
+      --amber: #e8900a;
+      --amber-light: #fef3dc;
+      --coral: #d84a2d;
+      --coral-light: #fdeee9;
+      --sky: #1e6fa8;
+      --sky-light: #e4f0f9;
+      --ink: #1a1a1a;
+      --ink-muted: #4a4a4a;
+      --ink-soft: #7a7a7a;
+      --surface: #faf9f6;
+      --white: #ffffff;
+      --border: rgba(0, 0, 0, 0.08);
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Be Vietnam Pro', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--surface);
+      color: var(--ink);
+      line-height: 1.75;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(10, 74, 60, 0.97);
+      backdrop-filter: blur(8px);
+      padding: 0 2rem;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.7rem;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      padding-top: 60px;
+      background: var(--teal-dark);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.06;
+      background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%);
+      background-size: 24px 24px;
+    }
+
+    .hero-circle {
+      position: absolute;
+      right: -10%;
+      top: 10%;
+      width: 60vw;
+      height: 60vw;
+      max-width: 700px;
+      max-height: 700px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      pointer-events: none;
+    }
+
+    .hero-circle::after {
+      content: '';
+      position: absolute;
+      inset: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.12);
+      color: #a8e6cf;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      color: #fff;
+      line-height: 1.15;
+      max-width: 700px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      color: #5ddbb8;
+      font-style: italic;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.72);
+      max-width: 520px;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: #2fb08a;
+      color: #fff;
+      border: none;
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: #26987a;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(255, 255, 255, 0.7);
+      color: #fff;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      flex-wrap: wrap;
+    }
+
+    .hero-stat-num {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      color: #5ddbb8;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-stat-label {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.55);
+      font-weight: 500;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 5rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-lead {
+      font-size: 1.05rem;
+      color: var(--ink-muted);
+      max-width: 680px;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+
+    /* STORY SECTION */
+    #story {
+      background: var(--white);
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .story-visual {
+      background: var(--teal-pale);
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-visual::before {
+      content: '"';
+      font-family: var(--serif);
+      font-size: 12rem;
+      color: rgba(47, 176, 138, 0.15);
+      position: absolute;
+      top: -2rem;
+      left: 1rem;
+      line-height: 1;
+    }
+
+    .story-visual-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .story-quote {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--teal-dark);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .story-attr {
+      font-size: 0.85rem;
+      color: var(--teal-mid);
+      font-weight: 600;
+    }
+
+    .story-text p {
+      color: var(--ink-muted);
+      margin-bottom: 1.2rem;
+      line-height: 1.85;
+    }
+
+    .story-callout {
+      background: var(--teal-pale);
+      border-left: 3px solid var(--teal-light);
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+      font-weight: 500;
+      color: var(--teal-dark);
+    }
+
+    /* EMOTION SECTION */
+    #emotion {
+      background: var(--coral-light);
+    }
+
+    .emotion-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .emotion-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.8rem;
+      border: 1px solid rgba(216, 74, 45, 0.12);
+    }
+
+    .emotion-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .emotion-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: var(--ink);
+    }
+
+    .emotion-card p {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      line-height: 1.75;
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .solution-item {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .solution-num {
+      background: var(--coral);
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .solution-text h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .solution-text p {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      line-height: 1.6;
+    }
+
+    /* HAPPY SCHOOL */
+    #happy-school {
+      background: var(--white);
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .pillar {
+      padding: 2rem 1.8rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      border-radius: 14px 14px 0 0;
+    }
+
+    .pillar-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .pillar h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar p {
+      font-size: 0.87rem;
+      color: var(--ink-muted);
+      line-height: 1.8;
+    }
+
+    .pillar ul {
+      list-style: none;
+      margin-top: 0.8rem;
+    }
+
+    .pillar ul li {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      padding: 0.3rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .pillar ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--teal-light);
+      font-size: 0.75rem;
+    }
+
+    /* REPORTING CHANNEL */
+    #reporting {
+      background: var(--sky-light);
+    }
+
+    .report-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .report-phone {
+      background: var(--ink);
+      border-radius: 32px;
+      padding: 2rem 1.5rem;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    .phone-screen {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      padding: 1.2rem 1rem;
+    }
+
+    .phone-header {
+      background: var(--teal-dark);
+      color: #fff;
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .phone-header p:first-child {
+      font-size: 0.7rem;
+      opacity: 0.7;
+    }
+
+    .phone-header p:last-child {
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .phone-msg {
+      border-radius: 12px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.7rem;
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    .msg-in {
+      background: #f0f0f0;
+      border-radius: 4px 12px 12px 12px;
+      color: #333;
+    }
+
+    .msg-out {
+      background: var(--teal-mid);
+      color: #fff;
+      border-radius: 12px 4px 12px 12px;
+      margin-left: 20%;
+    }
+
+    .report-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .channel-item {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.3rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      border: 1px solid rgba(30, 111, 168, 0.12);
+    }
+
+    .channel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    .channel-item h4 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .channel-item p {
+      font-size: 0.83rem;
+      color: var(--ink-muted);
+      line-height: 1.65;
+    }
+
+    /* FRIENDSHIP */
+    #friendship {
+      background: var(--white);
+    }
+
+    .friendship-hero {
+      background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-mid) 100%);
+      border-radius: 20px;
+      padding: 3.5rem;
+      margin-bottom: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .friendship-msg {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    .friendship-msg em {
+      color: #a8f0d8;
+      font-style: italic;
+    }
+
+    .friendship-tips {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .tip-row {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 0.9rem 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.88rem;
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+
+    .tip-row span:first-child {
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .skill-card:hover {
+      border-color: var(--teal-light);
+      transform: translateY(-3px);
+    }
+
+    .skill-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .skill-card p {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      line-height: 1.75;
+    }
+
+    .skill-steps {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .skill-step {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .skill-step::before {
+      content: attr(data-n);
+      position: absolute;
+      left: 0;
+      background: var(--teal-pale);
+      color: var(--teal-dark);
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+      top: 1px;
+      line-height: 18px;
+      text-align: center;
+    }
+
+    /* TECHNOLOGY */
+    #technology {
+      background: #0f1a2e;
+      color: #fff;
+    }
+
+    #technology .section-title {
+      color: #fff;
+    }
+
+    #technology .section-lead {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .tech-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 2rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .tech-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .tech-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.8rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+
+    .tech-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: #fff;
+    }
+
+    .tech-card p {
+      font-size: 0.86rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.75;
+    }
+
+    .tech-features {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .tech-feature {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.65);
+      padding-left: 1.3rem;
+      position: relative;
+    }
+
+    .tech-feature::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      font-size: 0.75rem;
+      color: #5ddbb8;
+    }
+
+    /* CTA */
+    #cta {
+      background: var(--teal-dark);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    #cta h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      color: #fff;
+      margin-bottom: 1.2rem;
+    }
+
+    #cta p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hotline-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-top: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .hotline-item {
+      text-align: center;
+    }
+
+    .hotline-num {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: #5ddbb8;
+      font-weight: 700;
+      display: block;
+      line-height: 1;
+    }
+
+    .hotline-label {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 0.3rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #060e18;
+      color: rgba(255, 255, 255, 0.4);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.82rem;
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #5ddbb8;
+    }
+
+    /* ── HAMBURGER BUTTON ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .nav-hamburger:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+
+    .nav-hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ── MOBILE DRAWER ── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: rgba(8, 55, 44, 0.98);
+      backdrop-filter: blur(12px);
+      z-index: 99;
+      padding: 1rem 1.5rem 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      animation: slideDown 0.22s ease;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .mobile-menu ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      margin-bottom: 1rem;
+    }
+
+    .mobile-menu ul a {
+      display: block;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.75rem 0.8rem;
+      border-radius: 8px;
+      letter-spacing: 0.02em;
+      transition: background 0.18s, color 0.18s;
+    }
+
+    .mobile-menu ul a:hover,
+    .mobile-menu ul a:active {
+      background: rgba(255, 255, 255, 0.1);
+      color: #5ddbb8;
+    }
+
+    .mobile-hotline {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1rem;
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .mobile-hotline a {
+      flex: 1;
+      text-align: center;
+      background: rgba(47, 176, 138, 0.18);
+      border: 1px solid rgba(47, 176, 138, 0.3);
+      border-radius: 8px;
+      padding: 0.6rem 0.4rem;
+      color: #5ddbb8;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      transition: background 0.18s;
+    }
+
+    .mobile-hotline a:active {
+      background: rgba(47, 176, 138, 0.3);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+
+      /* Nav */
+      .nav-links {
+        display: none;
+      }
+
+      .nav-hamburger {
+        display: flex;
+      }
+
+      .nav-inner {
+        padding: 0;
+      }
+
+      nav {
+        padding: 0 1.2rem;
+      }
+
+      /* Sections */
+      section {
+        padding: 3rem 1.2rem;
+      }
+
+      /* Hero */
+      .hero-inner {
+        padding: 3rem 1.2rem 2rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+      }
+
+      .hero-sub {
+        font-size: 0.97rem;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .hero-btns .btn-primary,
+      .hero-btns .btn-outline {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      .hero-stats {
+        gap: 1.8rem;
+        margin-top: 2.5rem;
+        padding-top: 2rem;
+      }
+
+      .hero-stat-num {
+        font-size: 1.8rem;
+      }
+
+      /* Story */
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .story-visual {
+        padding: 2rem 1.5rem;
+      }
+
+      .story-quote {
+        font-size: 1.15rem;
+      }
+
+      /* Emotion cards – 1 col */
+      .emotion-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .solutions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Happy school */
+      .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      /* Reporting */
+      .report-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .report-phone {
+        max-width: 260px;
+      }
+
+      /* Friendship */
+      .friendship-hero {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+        padding: 2rem 1.5rem;
+        border-radius: 14px;
+      }
+
+      .friendship-msg {
+        font-size: 1.4rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      /* Technology */
+      .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      /* CTA */
+      .cta-btns {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .cta-btns button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 0.95rem;
+      }
+
+      .hotline-box {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+
+      .hotline-num {
+        font-size: 1.7rem;
+      }
+
+      /* Footer */
+      footer>div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        padding: 2.5rem 1.2rem 2rem !important;
+      }
+
+      /* Section titles */
+      .section-title {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+      }
+
+      /* Modals */
+      .modal-box {
+        margin: 1rem !important;
+        max-height: calc(100vh - 2rem) !important;
+        border-radius: 14px !important;
+      }
+    }
+
+    /* Extra small */
+    @media (max-width: 400px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+
+      .nav-logo {
+        font-size: 0.95rem;
+      }
+
+      .hero-stats {
+        gap: 1.2rem;
+      }
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-tag {
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero h1 {
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .hero-sub {
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .hero-btns {
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .hero-stats {
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+
+    /* SCROLL INDICATOR */
+    .scroll-line {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .scroll-line::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+
+      0%,
+      100% {
+        opacity: 0.3;
+        transform: scaleY(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scaleY(0.7);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">🕊 Trường Học An Toàn</a>
+      <ul class="nav-links">
+        <li><a href="#story">Câu chuyện</a></li>
+        <li><a href="#emotion">Cảm xúc</a></li>
+        <li><a href="#happy-school">Sáng kiến</a></li>
+        <li><a href="#reporting">Lên tiếng</a></li>
+        <li><a href="#friendship">Tình bạn</a></li>
+        <li><a href="#technology">Công nghệ</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Mở menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU DRAWER -->
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu di động">
+    <ul>
+      <li><a href="#story">📖 Câu chuyện</a></li>
+      <li><a href="#emotion">💬 Cảm xúc &amp; Giải pháp</a></li>
+      <li><a href="#happy-school">🌟 Sáng kiến</a></li>
+      <li><a href="#reporting">📢 Kênh lên tiếng</a></li>
+      <li><a href="#friendship">🤝 Tình bạn</a></li>
+      <li><a href="#technology">💻 Công nghệ</a></li>
+    </ul>
+    <div class="mobile-hotline">
+      <a href="tel:111">📞 111<br><span style="font-size:0.68rem;font-weight:400;opacity:0.8;">Bảo vệ trẻ em</span></a>
+      <a href="tel:18005999920">📞 1800 599 920<br><span style="font-size:0.68rem;font-weight:400;opacity:0.8;">Tâm
+          thần</span></a>
+      <a href="tel:113">🚨 113<br><span style="font-size:0.68rem;font-weight:400;opacity:0.8;">Khẩn cấp</span></a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-circle"></div>
+    <div class="hero-inner">
+      <span class="hero-tag">Chiến dịch học sinh Việt Nam</span>
+      <h1>Nói <em>Không</em> Với<br>Bạo Lực Học Đường</h1>
+      <p class="hero-sub">
+        Mỗi học sinh đều xứng đáng được học tập trong môi trường an toàn, thân thiện và yêu thương. Cùng chúng ta chung
+        tay xây dựng trường học hạnh phúc — nơi không có chỗ cho bạo lực.
+      </p>
+      <div class="hero-btns">
+        <a href="#story" class="btn-primary">Đọc câu chuyện truyền cảm hứng</a>
+        <a href="#cta" class="btn-outline">Đường dây hỗ trợ</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">1 / 5</div>
+          <div class="hero-stat-label">học sinh từng bị bắt nạt</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">76%</div>
+          <div class="hero-stat-label">không dám lên tiếng</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-label">có thể được phòng ngừa</div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-line">Cuộn xuống</div>
+  </section>
+
+  <!-- STORY -->
+  <section id="story">
+    <div class="section-inner">
+      <div class="story-grid">
+        <div class="story-visual">
+          <div class="story-visual-content">
+            <p class="story-quote">"Hôm đó, thay vì im lặng bước đi, em quyết định dừng lại. Và điều đó đã thay đổi tất
+              cả."</p>
+            <p class="story-attr">— Minh Tuấn, học sinh lớp 9, Cần Thơ</p>
+          </div>
+        </div>
+        <div class="story-text">
+          <span class="section-label" style="color: var(--teal-mid);">📖 Câu chuyện tâm đắc</span>
+          <h2 class="section-title">Khi Một Học Sinh Dám<br>Đứng Ra Bảo Vệ Bạn</h2>
+          <p>
+            Buổi sáng tháng Mười đó, Minh Tuấn đang đi vào sân trường thì thấy một nhóm học sinh đang chặn đường bạn Nam
+            — cậu bé nhỏ con, hay bị trêu chọc vì mặc áo cũ. Tiếng cười nhạo, tiếng chửi rủa, rồi một cái túi sách bị
+            giật phăng xuống đất.
+          </p>
+          <div class="story-callout">
+            Thay vì bước đi như mọi ngày, Tuấn đứng lại. "Thầy sẽ biết chuyện này" — câu nói bình thản đó đủ để nhóm kia
+            bỏ đi.
+          </div>
+          <p>
+            Tuấn cùng Nam lên gặp thầy chủ nhiệm, kể lại toàn bộ sự việc. Ban đầu, Tuấn sợ bị trả thù. Nhưng nhờ thầy
+            giáo xử lý kịp thời, mâu thuẫn được giải quyết bằng đối thoại. Nhóm học sinh kia phải xin lỗi trước lớp và
+            tham gia chương trình tư vấn tâm lý của trường.
+          </p>
+          <p>
+            Câu chuyện của Tuấn lan truyền khắp trường. Nhiều học sinh khác bắt đầu dám lên tiếng hơn. Từ một hành động
+            nhỏ, cả tập thể lớp đã cùng thành lập nhóm "Bạn đồng hành" — nơi các em hỗ trợ nhau mỗi khi gặp vấn đề.
+          </p>
+          <p style="color: var(--teal-dark); font-weight: 600; margin-top: 1.2rem;">
+            Bài học: Sự can đảm không cần to lớn — chỉ cần đủ để nói một câu đúng lúc.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMOTION & SOLUTIONS -->
+  <section id="emotion">
+    <div class="section-inner">
+      <span class="section-label" style="color: var(--coral);">💬 Cảm xúc & Giải pháp</span>
+      <h2 class="section-title">Khi Bạo Lực Để Lại<br>Những Vết Thương Vô Hình</h2>
+      <p class="section-lead">
+        Nếu bạn đã từng là nạn nhân của bạo lực học đường, những cảm xúc này hoàn toàn có thật — và bạn không cô đơn
+        trong điều đó.
+      </p>
+
+      <div class="emotion-cards">
+        <div class="emotion-card">
+          <div class="emotion-icon" style="background: #fde8e8;">😰</div>
+          <h3>Sợ hãi & Lo âu</h3>
+          <p>Mỗi buổi sáng đến trường là một nỗi sợ. Lo lắng gặp lại những người đã làm đau mình, sợ bị cô lập, sợ không
+            ai tin tưởng mình.</p>
+        </div>
+        <div class="emotion-card">
+          <div class="emotion-icon" style="background: #e8eefe;">😔</div>
+          <h3>Tự ti & Thu mình</h3>
+          <p>Dần dần bắt đầu nghĩ rằng mình yếu đuối, không đủ giỏi, không xứng đáng được tôn trọng. Điểm số sụt giảm,
+            không muốn giao tiếp.</p>
+        </div>
+        <div class="emotion-card">
+          <div class="emotion-icon" style="background: #fef3dc;">😤</div>
+          <h3>Tức giận & Bất lực</h3>
+          <p>Phẫn uất khi chứng kiến sự bất công mà không biết làm gì. Tức bản thân vì đã không đứng lên, tức người lớn
+            vì không nhìn thấy.</p>
+        </div>
+        <div class="emotion-card">
+          <div class="emotion-icon" style="background: #e4f0f9;">😶</div>
+          <h3>Im lặng & Cô đơn</h3>
+          <p>Không dám kể với ai vì sợ bị cười nhạo, sợ làm bố mẹ lo lắng, hoặc đơn giản là không biết ai sẽ lắng nghe
+            mình thật sự.</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--ink);">
+        Giải pháp ngăn chặn từ góc nhìn học sinh
+      </h3>
+      <div class="solutions-grid">
+        <div class="solution-item">
+          <div class="solution-num">1</div>
+          <div class="solution-text">
+            <h4>Lên tiếng ngay lập tức</h4>
+            <p>Kể cho người lớn tin cậy — thầy cô, cha mẹ, cố vấn học đường — ngay khi sự việc xảy ra, đừng chờ đợi.</p>
+          </div>
+        </div>
+        <div class="solution-item">
+          <div class="solution-num">2</div>
+          <div class="solution-text">
+            <h4>Ghi chép sự kiện</h4>
+            <p>Lưu lại ngày giờ, địa điểm, và mô tả những gì đã xảy ra. Bằng chứng giúp người lớn xử lý hiệu quả hơn.
+            </p>
+          </div>
+        </div>
+        <div class="solution-item">
+          <div class="solution-num">3</div>
+          <div class="solution-text">
+            <h4>Tìm kiếm bạn đồng hành</h4>
+            <p>Đừng đi một mình ở những nơi hay xảy ra bắt nạt. Đi cùng bạn bè tạo ra sự bảo vệ tự nhiên.</p>
+          </div>
+        </div>
+        <div class="solution-item">
+          <div class="solution-num">4</div>
+          <div class="solution-text">
+            <h4>Không trả đũa bằng bạo lực</h4>
+            <p>Bạo lực không giải quyết được bạo lực — chỉ làm mọi thứ tệ hơn. Hãy dùng lời nói bình tĩnh và nhờ sự hỗ
+              trợ.</p>
+          </div>
+        </div>
+        <div class="solution-item">
+          <div class="solution-num">5</div>
+          <div class="solution-text">
+            <h4>Tham gia câu lạc bộ, nhóm tích cực</h4>
+            <p>Xây dựng các mối quan hệ bạn bè lành mạnh và tạo ra mạng lưới hỗ trợ trong trường học.</p>
+          </div>
+        </div>
+        <div class="solution-item">
+          <div class="solution-num">6</div>
+          <div class="solution-text">
+            <h4>Chăm sóc sức khỏe tâm thần</h4>
+            <p>Tìm kiếm sự tư vấn tâm lý. Cảm xúc tổn thương cần được chữa lành — đó không phải là yếu đuối.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HAPPY SCHOOL -->
+  <section id="happy-school">
+    <div class="section-inner">
+      <span class="section-label" style="color: var(--amber);">🌟 Sáng kiến</span>
+      <h2 class="section-title">Xây Dựng Trường Học Hạnh Phúc<br>— Không Bạo Lực</h2>
+      <p class="section-lead">
+        Một trường học thực sự hạnh phúc không chỉ là nơi học sinh đến học mà là nơi mỗi người cảm thấy được yêu thương,
+        tôn trọng và an toàn.
+      </p>
+      <div class="pillars-grid">
+        <div class="pillar">
+          <div class="pillar-accent" style="background: var(--teal-light);"></div>
+          <div class="pillar-icon">🏫</div>
+          <h3>Môi trường thể chất an toàn</h3>
+          <p>Cơ sở vật chất và không gian trường học được thiết kế để giảm thiểu góc khuất, tăng cường giám sát tự
+            nhiên.</p>
+          <ul>
+            <li>Camera an ninh tại sân trường, hành lang</li>
+            <li>Bảo vệ tuần tra thường xuyên</li>
+            <li>Phòng tư vấn tâm lý riêng tư</li>
+            <li>Góc "safe space" cho học sinh tìm đến</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <div class="pillar-accent" style="background: var(--amber);"></div>
+          <div class="pillar-icon">🤝</div>
+          <h3>Văn hóa trường học tích cực</h3>
+          <p>Xây dựng các giá trị cốt lõi về tôn trọng, đồng cảm và trách nhiệm thông qua chương trình giáo dục kỹ năng
+            sống.</p>
+          <ul>
+            <li>Giờ sinh hoạt về giá trị sống mỗi tuần</li>
+            <li>Chương trình "Học sinh xuất sắc về nhân cách"</li>
+            <li>Lễ vinh danh hành động tử tế</li>
+            <li>Tường "Lời khen dành cho bạn"</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <div class="pillar-accent" style="background: var(--sky);"></div>
+          <div class="pillar-icon">👨‍🏫</div>
+          <h3>Giáo viên là người đồng hành</h3>
+          <p>Thầy cô không chỉ dạy kiến thức mà còn lắng nghe, phát hiện sớm dấu hiệu bạo lực và can thiệp kịp thời.</p>
+          <ul>
+            <li>Tập huấn nhận diện dấu hiệu bạo lực</li>
+            <li>Giờ "Tâm sự với thầy cô" định kỳ</li>
+            <li>Thư ẩn danh gửi thầy cô tin tưởng</li>
+            <li>Phối hợp chặt chẽ với gia đình</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <div class="pillar-accent" style="background: var(--coral);"></div>
+          <div class="pillar-icon">👪</div>
+          <h3>Sự tham gia của gia đình</h3>
+          <p>Cha mẹ là đối tác quan trọng trong việc phát hiện và ngăn chặn bạo lực học đường từ gốc rễ.</p>
+          <ul>
+            <li>Hội thảo phụ huynh về nhận biết bắt nạt</li>
+            <li>App thông báo tình trạng con em</li>
+            <li>Nhóm phụ huynh hỗ trợ lẫn nhau</li>
+            <li>Đường dây hotline cho gia đình</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <div class="pillar-accent" style="background: #9b59b6;"></div>
+          <div class="pillar-icon">🧠</div>
+          <h3>Hỗ trợ sức khỏe tâm thần</h3>
+          <p>Mỗi trường cần có chuyên viên tư vấn tâm lý học đường để hỗ trợ cả nạn nhân lẫn người gây bạo lực.</p>
+          <ul>
+            <li>Tư vấn tâm lý miễn phí tại trường</li>
+            <li>Nhóm trị liệu tập thể</li>
+            <li>Chương trình phục hồi cho người gây bạo lực</li>
+            <li>Kỹ năng kiểm soát cảm xúc</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <div class="pillar-accent" style="background: #27ae60;"></div>
+          <div class="pillar-icon">📋</div>
+          <h3>Chính sách rõ ràng & minh bạch</h3>
+          <p>Nội quy trường học cần quy định cụ thể về bạo lực, hình thức xử lý, và cam kết bảo vệ người tố cáo.</p>
+          <ul>
+            <li>Quy trình xử lý bạo lực rõ ràng</li>
+            <li>Cam kết bảo vệ danh tính người báo cáo</li>
+            <li>Hội đồng học sinh tham gia xây dựng nội quy</li>
+            <li>Công khai kết quả xử lý cho cộng đồng trường</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORTING CHANNEL -->
+  <section id="reporting">
+    <div class="section-inner">
+      <span class="section-label" style="color: var(--sky);">📢 Kênh tiếp nhận thông tin</span>
+      <h2 class="section-title">Đừng Im Lặng —<br>Hãy Lên Tiếng!</h2>
+      <p class="section-lead">
+        Sự im lặng là đồng lõa. Thiết lập đa dạng kênh tiếp nhận giúp mọi học sinh đều có thể lên tiếng theo cách mình
+        cảm thấy an toàn nhất.
+      </p>
+      <div class="report-layout">
+        <div>
+          <div class="report-phone">
+            <div class="phone-screen">
+              <div class="phone-header">
+                <p>Ứng dụng báo cáo bắt nạt</p>
+                <p>SafeSchool VN</p>
+              </div>
+              <div class="phone-msg msg-in">Tôi muốn báo cáo một vụ bắt nạt ở lớp 9A3...</div>
+              <div class="phone-msg msg-out">Cảm ơn bạn đã dũng cảm lên tiếng. Thông tin của bạn được bảo mật hoàn toàn.
+              </div>
+              <div class="phone-msg msg-in">Tôi không muốn lộ danh tính, được không?</div>
+              <div class="phone-msg msg-out">Hoàn toàn được! Bạn có thể báo cáo ẩn danh. Ban quản lý sẽ điều tra ngay
+                hôm nay.</div>
+            </div>
+          </div>
+        </div>
+        <div class="report-channels">
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;">Các kênh tiếp nhận đề xuất</h3>
+          <div class="channel-item">
+            <div class="channel-dot" style="background: var(--teal-light);"></div>
+            <div>
+              <h4>Hòm thư ẩn danh tại trường</h4>
+              <p>Đặt ở nhiều địa điểm trong trường, khóa riêng, chỉ Ban Giám hiệu và cố vấn tâm lý mới mở. Thu thập và
+                xem xét mỗi ngày.</p>
+            </div>
+          </div>
+          <div class="channel-item">
+            <div class="channel-dot" style="background: var(--amber);"></div>
+            <div>
+              <h4>Form báo cáo trực tuyến (ẩn danh)</h4>
+              <p>Google Form hoặc app riêng của trường — học sinh điền bất kỳ lúc nào, không cần đăng nhập, không lưu
+                địa chỉ IP.</p>
+            </div>
+          </div>
+          <div class="channel-item">
+            <div class="channel-dot" style="background: var(--sky);"></div>
+            <div>
+              <h4>Đội học sinh "Đại sứ chống bạo lực"</h4>
+              <p>Nhóm học sinh được đào tạo để lắng nghe, hỗ trợ bạn bè và chuyển thông tin đến thầy cô một cách kín
+                đáo.</p>
+            </div>
+          </div>
+          <div class="channel-item">
+            <div class="channel-dot" style="background: var(--coral);"></div>
+            <div>
+              <h4>Đường dây điện thoại riêng</h4>
+              <p>Số máy nội bộ của nhà trường hoạt động trong giờ học — học sinh gọi từ điện thoại trường, được bảo mật
+                danh tính.</p>
+            </div>
+          </div>
+          <div class="channel-item">
+            <div class="channel-dot" style="background: #9b59b6;"></div>
+            <div>
+              <h4>Góc tâm sự "Cửa luôn mở"</h4>
+              <p>Phòng tư vấn tâm lý học đường mở cửa mỗi giờ ra chơi — không cần hẹn, không cần giải thích, đến là được
+                lắng nghe.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRIENDSHIP -->
+  <section id="friendship">
+    <div class="section-inner">
+      <span class="section-label" style="color: var(--teal-mid);">💚 Tình bạn đẹp</span>
+      <h2 class="section-title">Bạn Bè — Lá Chắn Mạnh Nhất<br>Chống Bạo Lực</h2>
+      <p class="section-lead">
+        Tình bạn đẹp không chỉ mang lại niềm vui — nó còn là bức tường bảo vệ mỗi học sinh trước nguy cơ bạo lực.
+      </p>
+
+      <div class="friendship-hero">
+        <div class="friendship-msg">
+          Một người bạn thật sự sẽ không đứng nhìn khi bạn mình bị tổn thương. <em>Hành động nhỏ, tác động lớn.</em>
+        </div>
+        <div class="friendship-tips">
+          <div class="tip-row">
+            <span>👂</span>
+            <span>Lắng nghe bạn bè mà không phán xét — đôi khi chỉ cần ai đó lắng nghe là đủ để vượt qua.</span>
+          </div>
+          <div class="tip-row">
+            <span>🛡</span>
+            <span>Đứng cạnh bạn ở những nơi nguy hiểm — sự hiện diện của bạn là sức mạnh bảo vệ.</span>
+          </div>
+          <div class="tip-row">
+            <span>📣</span>
+            <span>Lên tiếng thay cho bạn khi bạn không dám — "Hành động đó không ổn" đủ để thay đổi tình huống.</span>
+          </div>
+          <div class="tip-row">
+            <span>🤗</span>
+            <span>Kéo bạn ra khỏi tình huống nguy hiểm bằng cách tạo ra cái cớ — "Bạn ơi, thầy gọi kìa!"</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem;">Kỹ năng tự bảo vệ & giải quyết mâu thuẫn
+      </h3>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>🗣 Khi bị bắt nạt — nói gì?</h3>
+          <p>Những câu nói giúp bạn giữ bình tĩnh và thoát khỏi tình huống mà không leo thang xung đột.</p>
+          <div class="skill-steps">
+            <div class="skill-step" data-n="1">Giọng bình tĩnh, rõ ràng: "Hãy dừng lại. Điều này không ổn."</div>
+            <div class="skill-step" data-n="2">Không tranh cãi — bước ra khỏi tình huống ngay.</div>
+            <div class="skill-step" data-n="3">Tìm người lớn hoặc bạn bè gần nhất.</div>
+            <div class="skill-step" data-n="4">Báo cáo cho thầy cô trong ngày hôm đó.</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>🤝 Giải quyết mâu thuẫn bằng đối thoại</h3>
+          <p>Kỹ năng trò chuyện giúp giải quyết xung đột trước khi chúng bùng nổ thành bạo lực.</p>
+          <div class="skill-steps">
+            <div class="skill-step" data-n="1">Chọn thời điểm cả hai bình tĩnh để nói chuyện.</div>
+            <div class="skill-step" data-n="2">Dùng "tôi cảm thấy..." thay vì "mày đã..."</div>
+            <div class="skill-step" data-n="3">Lắng nghe phía bên kia mà không ngắt lời.</div>
+            <div class="skill-step" data-n="4">Cùng tìm giải pháp mà cả hai đều chấp nhận được.</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>🌊 Kiểm soát cơn giận</h3>
+          <p>Kỹ thuật đơn giản giúp bạn không để cơn giận điều khiển hành động của mình.</p>
+          <div class="skill-steps">
+            <div class="skill-step" data-n="1">Đếm ngược từ 10 — chậm và thở sâu.</div>
+            <div class="skill-step" data-n="2">Rời khỏi nơi đang xảy ra xung đột.</div>
+            <div class="skill-step" data-n="3">Nói chuyện với bạn thân hoặc thầy cô.</div>
+            <div class="skill-step" data-n="4">Viết ra cảm xúc — sau đó quyết định cách hành động.</div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>🌟 Lan toả thông điệp tình bạn đẹp</h3>
+          <p>Những hành động nhỏ mỗi ngày tạo nên văn hóa trường học tích cực và thân thiện.</p>
+          <div class="skill-steps">
+            <div class="skill-step" data-n="1">Chào hỏi và mỉm cười với bạn mỗi ngày.</div>
+            <div class="skill-step" data-n="2">Mời bạn ngồi cùng khi thấy bạn ăn một mình.</div>
+            <div class="skill-step" data-n="3">Khen ngợi điểm tốt của bạn bè trước mọi người.</div>
+            <div class="skill-step" data-n="4">Từ chối tham gia khi người khác bị trêu chọc.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY -->
+  <section id="technology">
+    <div class="section-inner">
+      <span class="section-label" style="color: #5ddbb8;">💡 Vai trò công nghệ</span>
+      <h2 class="section-title">Công Nghệ — Vũ Khí Mới<br>Chống Bạo Lực Học Đường</h2>
+      <p class="section-lead">
+        Mạng xã hội và ứng dụng công nghệ thông tin không chỉ là nơi bạo lực mạng xảy ra — chúng còn là công cụ mạnh mẽ
+        để phòng ngừa và lan tỏa thông điệp tích cực.
+      </p>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <span class="tech-badge" style="background: rgba(93, 219, 184, 0.15); color: #5ddbb8;">Ứng dụng</span>
+          <h3>App "SafeSchool" báo cáo ẩn danh</h3>
+          <p>Ứng dụng di động cho phép học sinh báo cáo bắt nạt ẩn danh, theo dõi xử lý theo thời gian thực và kết nối
+            với tư vấn viên.</p>
+          <div class="tech-features">
+            <div class="tech-feature">Báo cáo hoàn toàn ẩn danh</div>
+            <div class="tech-feature">Đính kèm ảnh/video bằng chứng</div>
+            <div class="tech-feature">Thông báo xử lý vụ việc</div>
+            <div class="tech-feature">Chat trực tiếp với tư vấn tâm lý</div>
+            <div class="tech-feature">Bản đồ "điểm nóng" trong trường</div>
+          </div>
+        </div>
+        <div class="tech-card">
+          <span class="tech-badge" style="background: rgba(55, 138, 221, 0.15); color: #73b8f0;">Mạng xã hội</span>
+          <h3>Chiến dịch truyền thông trường học</h3>
+          <p>Sử dụng TikTok, Instagram, Facebook để lan tỏa thông điệp chống bạo lực học đường bằng ngôn ngữ của giới
+            trẻ.</p>
+          <div class="tech-features">
+            <div class="tech-feature">Hashtag #TruongHocHanhPhuc #NoiKhong</div>
+            <div class="tech-feature">Video ngắn chia sẻ kỹ năng ứng phó</div>
+            <div class="tech-feature">Challenge lan tỏa hành động tử tế</div>
+            <div class="tech-feature">Live stream tư vấn tâm lý với chuyên gia</div>
+            <div class="tech-feature">Stories chia sẻ câu chuyện tích cực</div>
+          </div>
+        </div>
+        <div class="tech-card">
+          <span class="tech-badge" style="background: rgba(186, 117, 23, 0.15); color: #f0b84a;">Pháp luật</span>
+          <h3>Tuyên truyền pháp luật qua digital</h3>
+          <p>Infographic, video hoạt hình ngắn giải thích quyền và nghĩa vụ của học sinh theo Luật Trẻ em và các quy
+            định về bạo lực học đường.</p>
+          <div class="tech-features">
+            <div class="tech-feature">Video "Biết luật để bảo vệ mình"</div>
+            <div class="tech-feature">Infographic quyền của học sinh</div>
+            <div class="tech-feature">Quiz kiểm tra hiểu biết về bạo lực mạng</div>
+            <div class="tech-feature">Thư viện văn bản pháp luật dễ hiểu</div>
+          </div>
+        </div>
+        <div class="tech-card">
+          <span class="tech-badge" style="background: rgba(226, 75, 74, 0.15); color: #f08080;">Cảnh báo</span>
+          <h3>Hệ thống cảnh báo bạo lực mạng</h3>
+          <p>Công nghệ AI giúp phát hiện ngôn từ thù địch trong các nhóm chat trường học và cảnh báo sớm cho giáo viên
+            chủ nhiệm.</p>
+          <div class="tech-features">
+            <div class="tech-feature">Phát hiện ngôn từ thù địch tự động</div>
+            <div class="tech-feature">Báo cáo hành vi bất thường trên mạng</div>
+            <div class="tech-feature">Hướng dẫn xử lý khi bị bắt nạt online</div>
+            <div class="tech-feature">Bộ lọc nội dung độc hại trên thiết bị trường</div>
+          </div>
+        </div>
+        <div class="tech-card">
+          <span class="tech-badge" style="background: rgba(155, 89, 182, 0.15); color: #c39bd3;">Giáo dục</span>
+          <h3>E-learning kỹ năng phòng ngừa</h3>
+          <p>Khóa học trực tuyến tương tác giúp học sinh học kỹ năng xã hội, kiểm soát cảm xúc và nhận diện hành vi bạo
+            lực.</p>
+          <div class="tech-features">
+            <div class="tech-feature">Bài học gamified hấp dẫn</div>
+            <div class="tech-feature">Tình huống mô phỏng thực tế</div>
+            <div class="tech-feature">Chứng chỉ "Học sinh tích cực"</div>
+            <div class="tech-feature">Theo dõi tiến độ cho phụ huynh</div>
+          </div>
+        </div>
+        <div class="tech-card">
+          <span class="tech-badge" style="background: rgba(39, 174, 96, 0.15); color: #82e0aa;">Kết nối</span>
+          <h3>Nền tảng cộng đồng học đường</h3>
+          <p>Diễn đàn trực tuyến an toàn để học sinh chia sẻ câu chuyện, nhận hỗ trợ và kết nối với cộng đồng chống bạo
+            lực toàn quốc.</p>
+          <div class="tech-features">
+            <div class="tech-feature">Diễn đàn chia sẻ câu chuyện an toàn</div>
+            <div class="tech-feature">Nhóm hỗ trợ theo tỉnh/thành phố</div>
+            <div class="tech-feature">Tài nguyên học tập chia sẻ tự do</div>
+            <div class="tech-feature">Kết nối với tổ chức NGO hỗ trợ trẻ em</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL: CHIA SẺ CÂU CHUYỆN -->
+  <div id="modal-story"
+    style="display:none; position:fixed; inset:0; z-index:999; background:rgba(0,0,0,0.6); backdrop-filter:blur(4px); overflow-y:auto; padding:2rem 1rem;">
+    <div
+      style="background:#fff; border-radius:20px; max-width:620px; margin:0 auto; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,0.25);">
+      <div style="background:var(--teal-dark); padding:2rem 2.5rem; position:relative;">
+        <button onclick="closeModal('modal-story')"
+          style="position:absolute; top:1.2rem; right:1.5rem; background:rgba(255,255,255,0.15); border:none; color:#fff; width:34px; height:34px; border-radius:50%; cursor:pointer; font-size:1.1rem; display:flex; align-items:center; justify-content:center;">✕</button>
+        <div style="font-size:2rem; margin-bottom:0.6rem;">✍️</div>
+        <h2 style="font-family:var(--serif); color:#fff; font-size:1.6rem; margin-bottom:0.5rem;">Chia Sẻ Câu Chuyện Của
+          Bạn</h2>
+        <p style="color:rgba(255,255,255,0.65); font-size:0.9rem;">Mỗi câu chuyện đều có giá trị. Lời kể của bạn có thể
+          truyền cảm hứng và giúp đỡ người khác.</p>
+      </div>
+      <div style="padding:2.5rem;" id="story-form-wrap">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+          <div>
+            <label
+              style="display:block; font-size:0.82rem; font-weight:600; color:var(--ink-muted); margin-bottom:0.4rem;">Họ
+              và tên <span style="color:var(--teal-light);">*</span></label>
+            <input id="sf-name" type="text" placeholder="Nguyễn Văn A"
+              style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e0e0e0; border-radius:8px; font-family:var(--sans); font-size:0.9rem; outline:none; transition:border 0.2s;"
+              onfocus="this.style.borderColor='var(--teal-light)'" onblur="this.style.borderColor='#e0e0e0'">
+          </div>
+          <div>
+            <label
+              style="display:block; font-size:0.82rem; font-weight:600; color:var(--ink-muted); margin-bottom:0.4rem;">Trường
+              / Lớp</label>
+            <input id="sf-school" type="text" placeholder="THCS Nguyễn Du, Lớp 9A"
+              style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e0e0e0; border-radius:8px; font-family:var(--sans); font-size:0.9rem; outline:none; transition:border 0.2s;"
+              onfocus="this.style.borderColor='var(--teal-light)'" onblur="this.style.borderColor='#e0e0e0'">
+          </div>
+        </div>
+        <div style="margin-bottom:1rem;">
+          <label
+            style="display:block; font-size:0.82rem; font-weight:600; color:var(--ink-muted); margin-bottom:0.4rem;">Loại
+            câu chuyện <span style="color:var(--teal-light);">*</span></label>
+          <select id="sf-type"
+            style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e0e0e0; border-radius:8px; font-family:var(--sans); font-size:0.9rem; outline:none; background:#fff; transition:border 0.2s;"
+            onfocus="this.style.borderColor='var(--teal-light)'" onblur="this.style.borderColor='#e0e0e0'">
+            <option value="">-- Chọn loại câu chuyện --</option>
+            <option>Câu chuyện vượt qua bắt nạt</option>
+            <option>Hành động bảo vệ bạn bè</option>
+            <option>Sáng kiến phòng ngừa bạo lực</option>
+            <option>Câu chuyện xây dựng tình bạn đẹp</option>
+            <option>Trải nghiệm nhờ thầy cô hỗ trợ</option>
+            <option>Khác</option>
+          </select>
+        </div>
+        <div style="margin-bottom:1rem;">
+          <label
+            style="display:block; font-size:0.82rem; font-weight:600; color:var(--ink-muted); margin-bottom:0.4rem;">Tiêu
+            đề câu chuyện <span style="color:var(--teal-light);">*</span></label>
+          <input id="sf-title" type="text" placeholder="VD: Hôm đó tôi đã không im lặng..."
+            style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e0e0e0; border-radius:8px; font-family:var(--sans); font-size:0.9rem; outline:none; transition:border 0.2s;"
+            onfocus="this.style.borderColor='var(--teal-light)'" onblur="this.style.borderColor='#e0e0e0'">
+        </div>
+        <div style="margin-bottom:1rem;">
+          <label
+            style="display:block; font-size:0.82rem; font-weight:600; color:var(--ink-muted); margin-bottom:0.4rem;">Nội
+            dung câu chuyện <span style="color:var(--teal-light);">*</span></label>
+          <textarea id="sf-content" rows="6"
+            placeholder="Hãy kể câu chuyện của bạn ở đây... Đừng ngại chia sẻ cảm xúc, sự kiện và bài học bạn đã rút ra."
+            style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e0e0e0; border-radius:8px; font-family:var(--sans); font-size:0.9rem; outline:none; resize:vertical; transition:border 0.2s; line-height:1.7;"
+            onfocus="this.style.borderColor='var(--teal-light)'" onblur="this.style.borderColor='#e0e0e0'"></textarea>
+        </div>
+        <div style="margin-bottom:1rem;">
+          <label
+            style="display:block; font-size:0.82rem; font-weight:600; color:var(--ink-muted); margin-bottom:0.4rem;">Bài
+            học / Thông điệp bạn muốn gửi gắm</label>
+          <input id="sf-lesson" type="text" placeholder="VD: Hãy dũng cảm lên tiếng — sự im lặng không bảo vệ ai."
+            style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e0e0e0; border-radius:8px; font-family:var(--sans); font-size:0.9rem; outline:none; transition:border 0.2s;"
+            onfocus="this.style.borderColor='var(--teal-light)'" onblur="this.style.borderColor='#e0e0e0'">
+        </div>
+        <div style="margin-bottom:1.5rem; display:flex; align-items:flex-start; gap:0.7rem;">
+          <input type="checkbox" id="sf-anon" style="margin-top:3px; accent-color:var(--teal-mid);">
+          <label for="sf-anon" style="font-size:0.85rem; color:var(--ink-muted); cursor:pointer;">Đăng ẩn danh (tên tôi
+            sẽ không được hiển thị công khai)</label>
+        </div>
+        <div style="display:flex; gap:1rem;">
+          <button onclick="submitStoryForm()"
+            style="flex:1; background:var(--teal-dark); color:#fff; border:none; padding:0.9rem; border-radius:8px; font-family:var(--sans); font-size:0.95rem; font-weight:600; cursor:pointer; transition:background 0.2s;"
+            onmouseover="this.style.background='var(--teal-mid)'"
+            onmouseout="this.style.background='var(--teal-dark)'">Gửi câu chuyện 🕊</button>
+          <button onclick="closeModal('modal-story')"
+            style="background:#f5f5f5; color:var(--ink-muted); border:none; padding:0.9rem 1.5rem; border-radius:8px; font-family:var(--sans); font-size:0.9rem; cursor:pointer;">Hủy</button>
+        </div>
+      </div>
+      <div id="story-success" style="display:none; padding:3rem 2.5rem; text-align:center;">
+        <div style="font-size:3.5rem; margin-bottom:1rem;">🌟</div>
+        <h3 style="font-family:var(--serif); font-size:1.5rem; color:var(--teal-dark); margin-bottom:0.7rem;">Cảm ơn bạn
+          đã chia sẻ!</h3>
+        <p style="color:var(--ink-muted); margin-bottom:1.5rem;">Câu chuyện của bạn đã được ghi nhận. Ban biên tập sẽ
+          xem xét và đăng tải trong vòng 1–3 ngày làm việc. Lời kể của bạn có thể truyền cảm hứng cho rất nhiều bạn học
+          sinh khác.</p>
+        <button onclick="closeModal('modal-story')"
+          style="background:var(--teal-dark); color:#fff; border:none; padding:0.8rem 2rem; border-radius:8px; font-family:var(--sans); font-size:0.9rem; font-weight:600; cursor:pointer;">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: BÁO CÁO VỤ VIỆC -->
+  <div id="modal-report"
+    style="display:none; position:fixed; inset:0; z-index:999; background:rgba(0,0,0,0.6); backdrop-filter:blur(4px); overflow-y:auto; padding:2rem 1rem;">
+    <div
+      style="background:#fff; border-radius:20px; max-width:640px; margin:0 auto; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,0.25);">
+      <div style="background:#8b1a1a; padding:2rem 2.5rem; position:relative;">
+        <button onclick="closeModal('modal-report')"
+          style="position:absolute; top:1.2rem; right:1.5rem; background:rgba(255,255,255,0.15); border:none; color:#fff; width:34px; height:34px; border-radius:50%; cursor:pointer; font-size:1.1rem; display:flex; align-items:center; justify-content:center;">✕</button>
+        <div style="font-size:2rem; margin-bottom:0.6rem;">🚨</div>
+        <h2 style="font-family:var(--serif); color:#fff; font-size:1.6rem; margin-bottom:0.5rem;">Báo Cáo Vụ Việc Bạo
+          Lực</h2>
+        <p style="color:rgba(255,255,255,0.7); font-size:0.9rem;">Thông tin của bạn hoàn toàn bảo mật. Bạn có thể báo
+          cáo ẩn danh nếu muốn.</p>
+        <div style="display:flex; gap:0.6rem; margin-top:1rem; flex-wrap:wrap;">
+          <span
+            style="background:rgba(255,255,255,0.15); color:#fff; font-size:0.75rem; padding:0.25rem 0.9rem; border-radius:100px;">🔒
+            Bảo mật tuyệt đối</span>
+          <span
+            style="background:rgba(255,255,255,0.15); color:#fff; font-size:0.75rem; padding:0.25rem 0.9rem; border-radius:100px;">👤
+            Có thể ẩn danh</span>
+          <span
+            style="background:rgba(255,255,255,0.15); color:#fff; font-size:0.75rem; padding:0.25rem 0.9rem; border-radius:100px;">⚡
+            Xử lý trong 24h</span>
+        </div>
+      </div>
+      <div style="padding:2.5rem;" id="report-form-wrap">
+        <div
+          style="background:#fff3f3; border:1px solid #ffc0c0; border-radius:10px; padding:1rem 1.2rem; margin-bottom:1.5rem; font-size:0.85rem; color:#8b1a1a;">
+          <strong>⚠️ Trường hợp khẩn cấp:</strong> Nếu có nguy hiểm ngay lập tức, hãy gọi <strong>113</strong> hoặc
+          <strong>111</strong> ngay bây giờ.
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:0.7rem; margin-bottom:1.5rem;">
+          <input type="checkbox" id="rf-anon" style="margin-top:3px; accent-color:#8b1a1a;">
+          <label for="rf-anon" style="font-size:0.88rem; color:var(--ink-muted); cursor:pointer; font-weight:500;">Tôi
+            muốn báo cáo ẩn danh — không lưu tên hay thông tin liên hệ</label>
+        </div>
+        <div id="rf-identity" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+          <div>
+            <label
+              style="display:block; font-size:0.82rem; font-weight:600; color:var(--ink-muted); margin-bottom:0.4rem;">Họ
+              tên người báo cáo</label>
+            <input id="rf-name" type="text" placeholder="Có thể để trống nếu ẩn danh"
+              style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e0e0e0; border-radius:8px; font-family:var(--sans); font-size:0.9rem; outline:none; transition:border 0.2s;"
+              onfocus="this.style.borderColor='#c0392b'" onblur="this.style.borderColor='#e0e0e0'">
+          </div>
+          <div>
+            <label
+              style="display:block; font-size:0.82rem; font-weight:600; color:var(--ink-muted); margin-bottom:0.4rem;">Liên
+              hệ (email / SĐT)</label>
+            <input id="rf-contact" type="text" placeholder="Để nhận phản hồi xử lý"
+              style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e0e0e0; border-radius:8px; font-family:var(--sans); font-size:0.9rem; outline:none; transition:border 0.2s;"
+              onfocus="this.style.borderColor='#c0392b'" onblur="this.style.borderColor='#e0e0e0'">
+          </div>
+        </div>
+        <div style="margin-bottom:1rem;">
+          <label
+            style="display:block; font-size:0.82rem; font-weight:600; color:var(--ink-muted); margin-bottom:0.4rem;">Loại
+            bạo lực <span style="color:#c0392b;">*</span></label>
+          <select id="rf-type"
+            style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e0e0e0; border-radius:8px; font-family:var(--sans); font-size:0.9rem; outline:none; background:#fff; transition:border 0.2s;"
+            onfocus="this.style.borderColor='#c0392b'" onblur="this.style.borderColor='#e0e0e0'">
+            <option value="">-- Chọn loại bạo lực --</option>
+            <option>Bạo lực thể chất (đánh, xô đẩy, giật đồ)</option>
+            <option>Bạo lực ngôn ngữ (chửi rủa, xúc phạm, đe dọa)</option>
+            <option>Bắt nạt cô lập (tẩy chay, loại trừ khỏi nhóm)</option>
+            <option>Bạo lực mạng (cyberbullying)</option>
+            <option>Tống tiền / Ép buộc</option>
+            <option>Quay phim, chụp ảnh xúc phạm</option>
+            <option>Khác</option>
+          </select>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+          <div>
+            <label
+              style="display:block; font-size:0.82rem; font-weight:600; color:var(--ink-muted); margin-bottom:0.4rem;">Trường
+              xảy ra vụ việc <span style="color:#c0392b;">*</span></label>
+            <input id="rf-school" type="text" placeholder="Tên trường..."
+              style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e0e0e0; border-radius:8px; font-family:var(--sans); font-size:0.9rem; outline:none; transition:border 0.2s;"
+              onfocus="this.style.borderColor='#c0392b'" onblur="this.style.borderColor='#e0e0e0'">
+          </div>
+          <div>
+            <label
+              style="display:block; font-size:0.82rem; font-weight:600; color:var(--ink-muted); margin-bottom:0.4rem;">Thời
+              gian xảy ra</label>
+            <input id="rf-time" type="date"
+              style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e0e0e0; border-radius:8px; font-family:var(--sans); font-size:0.9rem; outline:none; transition:border 0.2s;"
+              onfocus="this.style.borderColor='#c0392b'" onblur="this.style.borderColor='#e0e0e0'">
+          </div>
+        </div>
+        <div style="margin-bottom:1rem;">
+          <label
+            style="display:block; font-size:0.82rem; font-weight:600; color:var(--ink-muted); margin-bottom:0.4rem;">Địa
+            điểm cụ thể</label>
+          <input id="rf-location" type="text" placeholder="VD: Sân sau nhà trường, hành lang tầng 2, nhà vệ sinh..."
+            style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e0e0e0; border-radius:8px; font-family:var(--sans); font-size:0.9rem; outline:none; transition:border 0.2s;"
+            onfocus="this.style.borderColor='#c0392b'" onblur="this.style.borderColor='#e0e0e0'">
+        </div>
+        <div style="margin-bottom:1rem;">
+          <label
+            style="display:block; font-size:0.82rem; font-weight:600; color:var(--ink-muted); margin-bottom:0.4rem;">Mô
+            tả vụ việc <span style="color:#c0392b;">*</span></label>
+          <textarea id="rf-desc" rows="5"
+            placeholder="Mô tả chi tiết những gì đã xảy ra: ai là nạn nhân, ai là người gây ra, có bao nhiêu người liên quan, vụ việc diễn ra như thế nào..."
+            style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e0e0e0; border-radius:8px; font-family:var(--sans); font-size:0.9rem; outline:none; resize:vertical; line-height:1.7; transition:border 0.2s;"
+            onfocus="this.style.borderColor='#c0392b'" onblur="this.style.borderColor='#e0e0e0'"></textarea>
+        </div>
+        <div style="margin-bottom:1rem;">
+          <label
+            style="display:block; font-size:0.82rem; font-weight:600; color:var(--ink-muted); margin-bottom:0.4rem;">Mức
+            độ nghiêm trọng</label>
+          <div style="display:flex; gap:0.7rem; flex-wrap:wrap;">
+            <label
+              style="display:flex; align-items:center; gap:0.4rem; cursor:pointer; font-size:0.85rem; color:var(--ink-muted);"><input
+                type="radio" name="rf-sev" value="low" style="accent-color:#c0392b;"> Nhẹ (bắt đầu xảy ra)</label>
+            <label
+              style="display:flex; align-items:center; gap:0.4rem; cursor:pointer; font-size:0.85rem; color:var(--ink-muted);"><input
+                type="radio" name="rf-sev" value="mid" style="accent-color:#c0392b;"> Trung bình (lặp lại nhiều
+              lần)</label>
+            <label
+              style="display:flex; align-items:center; gap:0.4rem; cursor:pointer; font-size:0.85rem; color:var(--ink-muted);"><input
+                type="radio" name="rf-sev" value="high" style="accent-color:#c0392b;"> Nghiêm trọng (cần can thiệp
+              ngay)</label>
+          </div>
+        </div>
+        <div style="margin-bottom:1.5rem;">
+          <label
+            style="display:block; font-size:0.82rem; font-weight:600; color:var(--ink-muted); margin-bottom:0.4rem;">Trường
+            hợp đã được báo cáo chưa?</label>
+          <select id="rf-reported"
+            style="width:100%; padding:0.7rem 1rem; border:1.5px solid #e0e0e0; border-radius:8px; font-family:var(--sans); font-size:0.9rem; outline:none; background:#fff; transition:border 0.2s;"
+            onfocus="this.style.borderColor='#c0392b'" onblur="this.style.borderColor='#e0e0e0'">
+            <option value="">-- Chọn --</option>
+            <option>Chưa báo cáo cho ai</option>
+            <option>Đã báo cáo thầy cô nhưng chưa được xử lý</option>
+            <option>Đã báo cáo Ban Giám hiệu</option>
+            <option>Đã báo cáo gia đình nạn nhân</option>
+          </select>
+        </div>
+        <div style="display:flex; gap:1rem;">
+          <button onclick="submitReportForm()"
+            style="flex:1; background:#8b1a1a; color:#fff; border:none; padding:0.9rem; border-radius:8px; font-family:var(--sans); font-size:0.95rem; font-weight:600; cursor:pointer; transition:background 0.2s;"
+            onmouseover="this.style.background='#a52020'" onmouseout="this.style.background='#8b1a1a'">Gửi báo cáo
+            🚨</button>
+          <button onclick="closeModal('modal-report')"
+            style="background:#f5f5f5; color:var(--ink-muted); border:none; padding:0.9rem 1.5rem; border-radius:8px; font-family:var(--sans); font-size:0.9rem; cursor:pointer;">Hủy</button>
+        </div>
+      </div>
+      <div id="report-success" style="display:none; padding:3rem 2.5rem; text-align:center;">
+        <div style="font-size:3.5rem; margin-bottom:1rem;">✅</div>
+        <h3 style="font-family:var(--serif); font-size:1.5rem; color:#8b1a1a; margin-bottom:0.7rem;">Báo cáo đã được
+          gửi!</h3>
+        <p style="color:var(--ink-muted); margin-bottom:0.8rem;">Cảm ơn bạn đã dũng cảm lên tiếng. Vụ việc của bạn sẽ
+          được xem xét trong vòng <strong>24 giờ</strong> làm việc.</p>
+        <p style="color:var(--ink-muted); margin-bottom:1.5rem; font-size:0.9rem;">Nếu có nguy hiểm khẩn cấp, hãy gọi
+          ngay <strong style="color:#8b1a1a;">113</strong> hoặc <strong style="color:#8b1a1a;">111</strong>.</p>
+        <button onclick="closeModal('modal-report')"
+          style="background:#8b1a1a; color:#fff; border:none; padding:0.8rem 2rem; border-radius:8px; font-family:var(--sans); font-size:0.9rem; font-weight:600; cursor:pointer;">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="cta-inner">
+      <h2>Cùng Nhau Tạo Nên<br>Trường Học An Toàn</h2>
+      <p>
+        Bạo lực học đường không thể bị xóa bỏ bởi một người hay một chính sách. Nó cần sự chung tay của toàn bộ cộng
+        đồng — học sinh, giáo viên, phụ huynh và xã hội.
+      </p>
+      <div class="cta-btns">
+        <button onclick="openModal('modal-story')" class="btn-primary">Chia sẻ câu chuyện của bạn</button>
+        <button onclick="openModal('modal-report')" class="btn-outline">Báo cáo vụ việc</button>
+      </div>
+      <div class="hotline-box">
+        <div class="hotline-item">
+          <span class="hotline-num">111</span>
+          <div class="hotline-label">Tổng đài bảo vệ trẻ em<br>Miễn phí 24/7</div>
+        </div>
+        <div class="hotline-item">
+          <span class="hotline-num">1800 599 920</span>
+          <div class="hotline-label">Tư vấn sức khỏe tâm thần<br>Miễn phí</div>
+        </div>
+        <div class="hotline-item">
+          <span class="hotline-num">113</span>
+          <div class="hotline-label">Cảnh sát hỗ trợ<br>Trường hợp khẩn cấp</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#060e18; color:rgba(255,255,255,0.55); padding:0; font-size:0.875rem;">
+    <div
+      style="max-width:1100px; margin:0 auto; padding:4rem 2rem 2.5rem; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:3rem;">
+      <!-- Brand -->
+      <div>
+        <div style="font-family:var(--serif); font-size:1.3rem; color:#fff; margin-bottom:0.9rem;">🕊 Trường Học An Toàn
+        </div>
+        <p style="color:rgba(255,255,255,0.45); font-size:0.85rem; line-height:1.8; margin-bottom:1.2rem;">
+          Dự án cộng đồng học sinh Việt Nam, hướng đến xây dựng môi trường học tập an toàn, thân thiện và hạnh phúc —
+          nơi mỗi học sinh đều được tôn trọng và yêu thương.
+        </p>
+
+      </div>
+      <!-- Nav links -->
+      <div>
+        <div
+          style="font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:1rem;">
+          Nội dung</div>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:0.6rem;">
+          <li><a href="#story"
+              style="color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.88rem; transition:color 0.2s;"
+              onmouseover="this.style.color='#5ddbb8'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Câu chuyện
+              truyền cảm hứng</a></li>
+          <li><a href="#emotion"
+              style="color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.88rem; transition:color 0.2s;"
+              onmouseover="this.style.color='#5ddbb8'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Cảm xúc &
+              Giải pháp</a></li>
+          <li><a href="#happy-school"
+              style="color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.88rem; transition:color 0.2s;"
+              onmouseover="this.style.color='#5ddbb8'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Trường học
+              hạnh phúc</a></li>
+          <li><a href="#reporting"
+              style="color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.88rem; transition:color 0.2s;"
+              onmouseover="this.style.color='#5ddbb8'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Kênh lên
+              tiếng</a></li>
+          <li><a href="#friendship"
+              style="color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.88rem; transition:color 0.2s;"
+              onmouseover="this.style.color='#5ddbb8'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Tình bạn
+              đẹp</a></li>
+          <li><a href="#technology"
+              style="color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.88rem; transition:color 0.2s;"
+              onmouseover="this.style.color='#5ddbb8'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Vai trò
+              công nghệ</a></li>
+        </ul>
+      </div>
+      <!-- Hotlines -->
+      <div>
+        <div
+          style="font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:1rem;">
+          Đường dây hỗ trợ</div>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:0.8rem;">
+          <li>
+            <div style="font-size:1.1rem; font-weight:700; color:#5ddbb8; font-family:var(--serif);">111</div>
+            <div style="font-size:0.78rem; color:rgba(255,255,255,0.4);">Bảo vệ trẻ em · Miễn phí 24/7</div>
+          </li>
+          <li>
+            <div style="font-size:1.1rem; font-weight:700; color:#5ddbb8; font-family:var(--serif);">1800 599 920</div>
+            <div style="font-size:0.78rem; color:rgba(255,255,255,0.4);">Tư vấn tâm thần · Miễn phí</div>
+          </li>
+          <li>
+            <div style="font-size:1.1rem; font-weight:700; color:#5ddbb8; font-family:var(--serif);">113</div>
+            <div style="font-size:0.78rem; color:rgba(255,255,255,0.4);">Cảnh sát · Khẩn cấp</div>
+          </li>
+          <li>
+            <div style="font-size:1.1rem; font-weight:700; color:#5ddbb8; font-family:var(--serif);">1800 1567</div>
+            <div style="font-size:0.78rem; color:rgba(255,255,255,0.4);">Hỗ trợ học sinh · Miễn phí</div>
+          </li>
+        </ul>
+      </div>
+      <!-- Actions -->
+      <div>
+        <div
+          style="font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:1rem;">
+          Hành động ngay</div>
+        <div style="display:flex; flex-direction:column; gap:0.7rem;">
+          <button onclick="openModal('modal-story')"
+            style="background:rgba(47,176,138,0.15); color:#5ddbb8; border:1px solid rgba(47,176,138,0.3); padding:0.65rem 1rem; border-radius:8px; font-family:var(--sans); font-size:0.85rem; font-weight:600; cursor:pointer; text-align:left; transition:all 0.2s;"
+            onmouseover="this.style.background='rgba(47,176,138,0.25)'"
+            onmouseout="this.style.background='rgba(47,176,138,0.15)'">✍️ Chia sẻ câu chuyện</button>
+          <button onclick="openModal('modal-report')"
+            style="background:rgba(200,50,50,0.15); color:#f08080; border:1px solid rgba(200,50,50,0.25); padding:0.65rem 1rem; border-radius:8px; font-family:var(--sans); font-size:0.85rem; font-weight:600; cursor:pointer; text-align:left; transition:all 0.2s;"
+            onmouseover="this.style.background='rgba(200,50,50,0.25)'"
+            onmouseout="this.style.background='rgba(200,50,50,0.15)'">🚨 Báo cáo vụ việc</button>
+        </div>
+        <div
+          style="margin-top:1.5rem; padding:1rem; background:rgba(255,255,255,0.04); border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+          <div style="font-size:0.75rem; color:rgba(255,255,255,0.3); margin-bottom:0.4rem;">Hashtag chiến dịch</div>
+          <div style="font-size:0.82rem; color:#5ddbb8; font-weight:600;">#TruongHocHanhPhuc</div>
+          <div style="font-size:0.82rem; color:#5ddbb8;">#NoiKhongVoiBaoLuc</div>
+          <div style="font-size:0.82rem; color:#5ddbb8;">#BanDongHanh</div>
+        </div>
+      </div>
+    </div>
+    <!-- Quote bar -->
+    <div style="border-top:1px solid rgba(255,255,255,0.07); text-align:center; padding:1.5rem 2rem;">
+      <p
+        style="font-family:var(--serif); font-style:italic; font-size:0.95rem; color:rgba(255,255,255,0.35); max-width:700px; margin:0 auto 1rem;">
+        "Mỗi đứa trẻ xứng đáng lớn lên trong yêu thương và an toàn."
+      </p>
+      <p style="font-size:0.75rem; color:rgba(255,255,255,0.2);">— Công ước Liên Hợp Quốc về Quyền Trẻ em · © 2025
+        Trường Học An Toàn · Dự án phi lợi nhuận vì học sinh Việt Nam</p>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script>
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    function toggleMenu(open) {
+      hamburger.classList.toggle('open', open);
+      mobileMenu.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    hamburger.addEventListener('click', () => toggleMenu(!mobileMenu.classList.contains('open')));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
+
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+      document.body.style.overflow = '';
+      if (id === 'modal-story') {
+        document.getElementById('story-form-wrap').style.display = 'block';
+        document.getElementById('story-success').style.display = 'none';
+      }
+      if (id === 'modal-report') {
+        document.getElementById('report-form-wrap').style.display = 'block';
+        document.getElementById('report-success').style.display = 'none';
+      }
+    }
+    document.getElementById('modal-story').addEventListener('click', function (e) {
+      if (e.target === this) closeModal('modal-story');
+    });
+    document.getElementById('modal-report').addEventListener('click', function (e) {
+      if (e.target === this) closeModal('modal-report');
+    });
+    document.getElementById('rf-anon').addEventListener('change', function () {
+      document.getElementById('rf-identity').style.opacity = this.checked ? '0.4' : '1';
+      document.getElementById('rf-identity').style.pointerEvents = this.checked ? 'none' : 'auto';
+    });
+    function submitStoryForm() {
+      const name = document.getElementById('sf-name').value.trim();
+      const type = document.getElementById('sf-type').value;
+      const title = document.getElementById('sf-title').value.trim();
+      const content = document.getElementById('sf-content').value.trim();
+      if (!name || !type || !title || !content) {
+        alert('Vui lòng điền đầy đủ các trường bắt buộc (*).');
+        return;
+      }
+      document.getElementById('story-form-wrap').style.display = 'none';
+      document.getElementById('story-success').style.display = 'block';
+    }
+    function submitReportForm() {
+      const type = document.getElementById('rf-type').value;
+      const school = document.getElementById('rf-school').value.trim();
+      const desc = document.getElementById('rf-desc').value.trim();
+      if (!type || !school || !desc) {
+        alert('Vui lòng điền đầy đủ các trường bắt buộc (*).');
+        return;
+      }
+      document.getElementById('report-form-wrap').style.display = 'none';
+      document.getElementById('report-success').style.display = 'block';
+    }
+  </script>
+</body>
+
+</html>
